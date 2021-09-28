@@ -52,7 +52,7 @@ class inputValidation {
         if (!idValid)
             result = result + "The employee ID must be in the format of AA-1234.\n";
         if (firstValid && firstEntered && lastValid && lastEntered && zipValid && idValid)
-            result = "There were no error found.";
+            result = "There were no errors found.";
 
         System.out.print(result);
     }
@@ -90,19 +90,15 @@ class inputValidation {
     }
 
     public boolean validateZip(String zipCode) {
-        boolean valid = false, zipLetters = false, zipNums = false, zipSpecial = false;
-        int length = zipCode.length();
+        boolean valid = false;
+        int length = zipCode.length(), zipTest = 0;
 
-        if (length > 5) {
+        if (length == 5) {
             for (int i = 0; i < length; i++) {
-                if (Character.isLetter(zipCode.charAt(i)))
-                    zipLetters = true;
-                else if (Character.isDigit(zipCode.charAt(i)))
-                    zipNums = true;
-                else
-                    zipSpecial = true;
+                if (Character.isDigit(zipCode.charAt(i)))
+                    zipTest += 1;
             }
-            if (zipNums && !zipLetters && !zipSpecial)
+            if (zipTest == 5)
                 valid = true;
         }
 
@@ -111,20 +107,26 @@ class inputValidation {
 
     public boolean validateEmployeeID(String employeeID) {
         boolean valid = false;
-        int length = employeeID.length();
+        int length = employeeID.length(), trueCheck = 0;
 
-        if (length > 0) {
+        if (length == 7) {
             for (int i = 0; i < 2; i++) {
                 if (Character.isLetter(employeeID.charAt(i))) {
-                    i++;
-                    if (employeeID.charAt(i) == '-') {
-                        for (i = 3; i < length; i++) {
-                            if (Character.isDigit(employeeID.charAt(i)))
-                                valid = true;
-                        }
-                    }
+                    trueCheck += 1;
                 }
             }
+
+            if(employeeID.charAt(2) == '-')
+                trueCheck += 1;
+
+            for (int i = 3; i < 7; i++) {
+                if (Character.isDigit(employeeID.charAt(i))) {
+                    trueCheck += 1;
+                }
+            }
+
+            if (trueCheck == 7)
+                valid = true;
         }
 
         return valid;

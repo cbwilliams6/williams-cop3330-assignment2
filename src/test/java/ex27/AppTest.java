@@ -5,7 +5,7 @@
 
 package ex27;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,6 +14,9 @@ import static org.junit.Assert.assertTrue;
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
     /**
      * Rigorous Test :-)
      */

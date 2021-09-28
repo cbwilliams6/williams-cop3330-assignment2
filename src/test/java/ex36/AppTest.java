@@ -5,11 +5,36 @@
 
 package ex36;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
+
+    @Test
+    void numLoop() {
+    }
+
+    @Test
+    void average() {
+    }
+
+    @Test
+    void max() {
+    }
+
+    @Test
+    void min() {
+    }
+
+    @Test
+    void std() {
+    }
     /**
      * Rigorous Test :-)
      */

@@ -5,11 +5,24 @@
 
 package ex38;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
+
+    @Test
+    void createArray() {
+    }
+
+    @Test
+    void filterEvenNumbers() {
+    }
     /**
      * Rigorous Test :-)
      */
