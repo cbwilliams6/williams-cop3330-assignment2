@@ -5,11 +5,20 @@
 
 package ex33;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
+
+    @Test
+    void eightBall() {
+    }
     /**
      * Rigorous Test :-)
      */

@@ -5,11 +5,24 @@
 
 package ex34;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
+
+    @Test
+    void removeEmployee() {
+    }
+
+    @Test
+    void printEmployees() {
+    }
     /**
      * Rigorous Test :-)
      */

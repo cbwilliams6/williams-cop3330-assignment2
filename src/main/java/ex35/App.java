@@ -5,15 +5,39 @@
 
 package ex35;
 
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
     public static void main( String[] args ){
-        Scanner input = new Scanner(System.in);
+        ArrayList<String> contest = new ArrayList<String>();
+        contest = nameLoop(contest);
+        contestWinner(contest);
+    }
 
-        System.out.print("Enter two strings and I'll tell you if they are anagrams:\nEnter the first string: ");
-        String str1 = input.nextLine();
-        System.out.print("Enter the second string: ");
-        String str2 = input.nextLine();
+    public static ArrayList<String> nameLoop(ArrayList<String> contest) {
+        Scanner input = new Scanner(System.in);
+        boolean test = true;
+
+        while (test){
+            System.out.print("Enter a name: ");
+            String name = input.nextLine();
+            contest.add(name);
+
+            if (name == "") {
+                contest.remove("");
+                test = false;
+            }
+        }
+
+        return contest;
+    }
+
+    public static void contestWinner(ArrayList<String> contest) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt(contest.size());
+
+        System.out.print("The winner is... " + contest.get(randomNum));
     }
 }

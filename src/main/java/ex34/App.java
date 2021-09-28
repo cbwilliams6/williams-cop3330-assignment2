@@ -5,15 +5,39 @@
 
 package ex34;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main( String[] args ){
         Scanner input = new Scanner(System.in);
+        ArrayList<String> employees = new ArrayList<String>();
 
-        System.out.print("Enter two strings and I'll tell you if they are anagrams:\nEnter the first string: ");
-        String str1 = input.nextLine();
-        System.out.print("Enter the second string: ");
-        String str2 = input.nextLine();
+        employees.add("John Smith");
+        employees.add("Jackie Jackson");
+        employees.add("Chris Jones");
+        employees.add("Amanda Cullen");
+        employees.add("Jeremy Goodwin");
+
+        printEmployees(employees);
+        removeEmployee(employees);
+        printEmployees(employees);
+    }
+
+    public static void removeEmployee(ArrayList<String> employees) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("\n\nEnter an employee name to remove: ");
+        String remove = input.nextLine();
+        System.out.print("\n");
+
+        employees.remove(remove);
+    }
+
+    public static void printEmployees(ArrayList<String> employees) {
+        System.out.print("There are " + employees.size() + " employees:");
+        for (int i = 0; i < employees.size(); i++){
+            System.out.print("\n" + employees.get(i));
+        }
     }
 }

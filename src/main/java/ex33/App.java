@@ -6,14 +6,23 @@
 package ex33;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class App {
     public static void main( String[] args ){
-        Scanner input = new Scanner(System.in);
+        System.out.print("What's your question?\n> ");
+        eightBall();
+    }
 
-        System.out.print("Enter two strings and I'll tell you if they are anagrams:\nEnter the first string: ");
-        String str1 = input.nextLine();
-        System.out.print("Enter the second string: ");
-        String str2 = input.nextLine();
+    public static void eightBall() {
+        Scanner input = new Scanner(System.in);
+        Random rand = new Random();
+        int randomNum = rand.nextInt(3);
+        String[] answers = {"Yes", "No", "Maybe", "Ask again later"};
+
+        String question = input.nextLine();
+
+        String response = answers[randomNum];
+        System.out.print(response);
     }
 }

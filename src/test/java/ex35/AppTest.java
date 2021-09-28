@@ -5,11 +5,24 @@
 
 package ex35;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    @Test
+    void main() {
+    }
+
+    @Test
+    void nameLoop() {
+    }
+
+    @Test
+    void contestWinner() {
+    }
     /**
      * Rigorous Test :-)
      */
